@@ -117,6 +117,31 @@ int main() {
 			   }
 			break;
 		   }
+		   case 'E': {
+		   	if (totalProductos == 0) {
+		   		cout << "No hay productos para eliminar.\n";
+		   		break;
+			   }
+			   string nombreEliminar;
+			   cout << "Ingrese el nombre del producto a eliminar: ";
+			   getline(cin, nombreEliminar);
+			   bool eliminado = false;
+			   for (int i = 0;i < totalProductos; i++){
+			   	if (productos[i].nombre == nombreEliminar){
+			   		 for (int j= i; j < totalProductos - 1; j--){
+			   		 	productos[j] = productos[j+1];
+						}
+						totalProductos--;
+						eliminado = true;
+						cout << "Producto eliminado correctamente.\n";
+						break;
+				   }
+			   }
+			   if (!eliminado){
+			   	cout << "Producto no encontrado.\n";
+			   }
+			break;
+		   }
 		   
 		   
 		  
