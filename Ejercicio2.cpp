@@ -202,12 +202,13 @@ int main() {
 			   }
 			break;
 		   }
-		   
-		   
-		   
-		  
-    }
-        
-	}
-	
+		   case 'S':{
+		   	cout << "Saliendo del programa.\n";
+			break;
+		   }
+		   default:
+		   	cout << "Opcion invalida.\n";
+   }
+	}while (opcion != 'S');
+	return 0;
 }
