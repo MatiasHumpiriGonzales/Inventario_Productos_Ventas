@@ -34,5 +34,26 @@ int main() {
         cin >> opcion;
         cin.ignore();
         
+        switch(opcion){
+        	case 'A': {
+        		if (totalProductos >= MAX_PRODUCTOS) {
+        			cout << "No se pueden registrar mas productos.\n";
+				break;
+			}
+			Producto b;
+			cout << "Ingrese el nombre del producto: ";
+			getline(cin, b.nombre);
+			cout << "Ingrese el precio: ";
+			cin >> b.precio;
+			cin.ignore();
+			productos[totalProductos] = b;
+			totalProductos++;
+			cout << "Producto registrado con exito.\n";
+			break;		
+		}
+		
+    }
         
 	}
+	
+}
