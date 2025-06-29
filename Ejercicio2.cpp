@@ -190,7 +190,18 @@ int main() {
 			   }
 			break;
 		   }
-		   
+		   case 'H': {
+		   	if (totalVentas == 0) {
+		   		cout << "No hay ventas registradas.\n";
+			   } else {
+			   	float sumaTotal = 0;
+			   	for (int i = 0; i< totalVentas; i++){
+			   		sumaTotal += ventas[i].precioTotal;
+				   }
+				   cout << "Total de ventas realizadas: S/ " << sumaTotal << endl;
+			   }
+			break;
+		   }
 		   
 		   
 		   
