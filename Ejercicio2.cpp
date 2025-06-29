@@ -142,6 +142,40 @@ int main() {
 			   }
 			break;
 		   }
+		   case 'F': {
+		   	if (totalProductos == 0){
+		   		cout << "No hay productos para vender.\n";;
+		   		break;
+			   }
+			   if (totalVentas >= MAX_VENTAS){
+			   	cout << "No se pueden registrar mas ventas.\n";
+			   	break;
+			   }
+			   string nombreProducto;
+			   cout << "Ingrese el nombre del producto a vender: ";
+			   getline(cin, nombreProducto);
+			   int indiceProducto = -1;
+			   for (int i = 0; i < totalProductos; i++){
+			   	if (productos[i].nombre == nombreProducto) {
+			   		indiceProducto = 1;
+			   		break;
+				   }
+			   }
+			   int cantidadVendida;
+			   cout << "Ingrese la cantidad vendida: ";
+			   cin >> cantidadVendida;
+			   cin.ignore();
+			   Venta c;
+			   c.idVenta = totalVentas + 1;
+			   c.producto = productos[indiceProducto].nombre;
+			   c.cantidad = cantidadVendida;
+			   c.precioTotal = cantidadVendida * productos[indiceProducto].precio;
+			   ventas[totalVentas] = c;
+			   totalVentas++;
+			   cout << "Venta registrada correctamente.\n";
+			break;
+		   }
+		   
 		   
 		   
 		  
