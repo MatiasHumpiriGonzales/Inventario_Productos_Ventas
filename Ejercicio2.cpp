@@ -72,7 +72,7 @@ int main() {
 			   }
 			   string nombreBuscar;
 			   cout << "Ingrese el nombre del producto a buscar: ";
-			   geline(cin, nombreBuscar);
+			   getline(cin, nombreBuscar);
 			   bool encontrado = false;
 			   for (int i = 0;i < totalProductos; i++) {
 			   	if (productos[i].nombre == nombreBuscar) {
@@ -88,6 +88,36 @@ int main() {
 			   }
 			break;
 		   }
+		   case 'D': {
+		   	if (totalProductos == 0) {
+		   		cout << "No hay productos para actualizar.\n";
+		   		break;
+			   }
+			   string nombreBuscar;
+			   cout << "Ingrese el nombre del producto a actualizar: ";
+			   getline(cin, nombreBuscar);
+			   bool actualizado = false;
+			   for (int i= 0; i< totalProductos; i++){
+			   	if(productos[i].nombre == nombreBuscar){
+			   		cout << "Producto encontrado.\n";
+			   		cout << "Nombre actual: " << productos[i].nombre << endl;
+			   		cout << "Precio actual: S/ " << productos[i].precio << endl;
+			   		cout << "Ingrese el nuevo nombre: ";
+			   		getline(cin, productos[i].nombre);
+			   		cout << "Ingrese el nuevo precio: ";
+			   		cin >> productos[i].precio;
+					cin.ignore();
+					cout << "Producto actualizado correctamente.\n";
+					actualizado = true;
+					break;
+				   }
+			   }
+			   if (!actualizado) {
+			   	cout << "Producto no encontrado.\n";
+			   }
+			break;
+		   }
+		   
 		   
 		  
     }
