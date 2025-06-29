@@ -175,6 +175,22 @@ int main() {
 			   cout << "Venta registrada correctamente.\n";
 			break;
 		   }
+		   case 'G': {
+		   	if (totalVentas == 0){
+		   		cout << "No hay ventas registradas.\n";
+			   } else {
+			   	cout << "\n___ Lista de Ventas ___\n";
+			   	for (int i = 0; i < totalVentas; i++){
+			   		cout << "ID Venta: " << ventas[i].idVenta << endl;
+			   		cout << "Producto: " << ventas[i].producto << endl;
+			   		cout << "Cantidad: " << ventas[i].cantidad << endl;
+			   		cout << "Total: S/ " << ventas[i].precioTotal << endl;
+			   		cout << "_____________________________\n";
+				   }
+			   }
+			break;
+		   }
+		   
 		   
 		   
 		   
