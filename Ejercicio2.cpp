@@ -65,6 +65,29 @@ int main() {
 			   }
 			break;
 		   }
+		   case 'C' :{
+		   	if (totalProductos == 0) {
+		   		cout << "No hay productos registrados para buscar.\n";
+		   		break;
+			   }
+			   string nombreBuscar;
+			   cout << "Ingrese el nombre del producto a buscar: ";
+			   geline(cin, nombreBuscar);
+			   bool encontrado = false;
+			   for (int i = 0;i < totalProductos; i++) {
+			   	if (productos[i].nombre == nombreBuscar) {
+			   		cout << "Producto encontrado:\n";
+			   		cout << "Nombre: " << productos[i].nombre << endl;
+			   		cout << "Precio: S/ " << productos[i].precio << endl;
+			   		encontrado = true;
+			   		break;
+				   }
+			   }
+			   if (!encontrado) {
+			   	cout << "Producto no encontrado.\n";
+			   }
+			break;
+		   }
 		   
 		  
     }
