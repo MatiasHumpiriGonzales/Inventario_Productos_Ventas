@@ -51,7 +51,22 @@ int main() {
 			cout << "Producto registrado con exito.\n";
 			break;		
 		}
-		
+		   case 'B': {
+		   	if (totalProductos == 0){
+		   		cout << "No hay productos registrados.\n";
+			   } else {
+			   	cout << "\n ___ Lista de productos ___\n";
+			   	for (int i = 0; i < totalProductos; i++) {
+			   		cout << "Prodcuto " << (i + 1) << ":\n";
+			   		cout << "Nombre: " << productos[i].nombre << endl;
+			   		cout << "Precio: S/ " << productos[i].precio << endl;
+			   		cout << "__________________________________\n";
+				   }
+			   }
+			break;
+		   }
+		   
+		  
     }
         
 	}
